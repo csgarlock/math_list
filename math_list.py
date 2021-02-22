@@ -107,6 +107,17 @@ class math_list:
             self.sort(low, pi - 1)
             self.sort(pi + 1, high)
             
+    def normalize(self, low = 0.0, high = 1.0):
+        min_v = self.get_min()
+        max_v = self.get_max()
+        dif = max_v - min_v
+        rnge = high - low
+        for i in range(self.length()):
+            new_val = (self.get(i) - min_v) / dif
+            normal = (new_val * rnge) + low
+            self.set_to(i, normal)
+        
+            
     
     #IO funtions as well as basic information about characteristics of the list
     
@@ -187,6 +198,6 @@ class math_list:
     def float_to_binary(self, num):
         hex_r = float.hex(num)
         print(hex_r)
-        base = int(hex_r[4:17], 16)
+        base = str(int(hex_r[4:17], 16))
         print(base)
         
