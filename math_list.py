@@ -23,6 +23,13 @@ class math_list:
         
     
     #Basic Funtions
+
+    #Utility Functions
+    def copy(self):
+        temp = []
+        for i in self.math_list:
+            temp.append(i)
+        return math_list(temp)
     
     #Find the max value
     def get_max(self):
@@ -178,7 +185,7 @@ class math_list:
     #make sure only ints and floats are being added to the list
     def __check_type(self, values):
         for i in values:
-            if(not type(i) == int and type(i) == float):
+            if(type(i) == int or type(i) == float):
                 return False
         return True
         
@@ -198,6 +205,9 @@ class math_list:
     def float_to_binary(self, num):
         hex_r = float.hex(num)
         print(hex_r)
-        base = str(int(hex_r[4:17], 16))
+        base = int(hex_r[4:17], 16)
+        exponent = int(hex_r[19:])
         print(base)
+        print("1." + hex(base))
+        print(exponent)
         
