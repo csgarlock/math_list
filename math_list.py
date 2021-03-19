@@ -123,7 +123,6 @@ class math_list:
             new_val = (self.get(i) - min_v) / dif
             normal = (new_val * rnge) + low
             self.set_to(i, normal)
-        
             
     
     #IO funtions as well as basic information about characteristics of the list
@@ -172,6 +171,10 @@ class math_list:
     #swap two elements of the math list    
     def swap(self, x, y):
         self.math_list[x], self.math_list[y] = self.math_list[y], self.math_list[x]
+
+    def add_from_input(self, amount = 1):
+        for i in range(amount):
+            self.append(float(input()))
         
         
     #methods not ment to be accessed outside of the class
