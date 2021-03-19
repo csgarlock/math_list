@@ -1,3 +1,5 @@
+import time
+
 class math_list:
     
     def __init__(self, array):
@@ -199,3 +201,20 @@ class math_list:
         return i+1
     
         
+ml = math_list([1,2,3, 5, -2, 25, -12, 5.12])
+print("Original List", ml)
+time.sleep(0.5)
+print("asking for Input...")
+ml.add_from_input(1)
+print(ml)
+ml.sort()
+print("Sorting...")
+time.sleep(2)
+print(ml)
+ml.normalize(0, 20)
+print("Normalizing...")
+time.sleep(2)
+print(ml)
+print("Getting Standard Deviation...")
+time.sleep(2)
+print(ml.get_stdv())
