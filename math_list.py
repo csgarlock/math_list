@@ -173,12 +173,6 @@ class math_list:
     def swap(self, x, y):
         self.math_list[x], self.math_list[y] = self.math_list[y], self.math_list[x]
         
-    #File I/0
-    
-    #write list to file
-    def write_to_file(self, path):
-        file = open(path, "wb")
-        
         
     #methods not ment to be accessed outside of the class
     
@@ -201,13 +195,4 @@ class math_list:
         self.swap(i+1, high)
         return i+1
     
-    #used to convert a float to bytes
-    def float_to_binary(self, num):
-        hex_r = float.hex(num)
-        print(hex_r)
-        base = int(hex_r[4:17], 16)
-        exponent = int(hex_r[19:])
-        print(base)
-        print("1." + hex(base))
-        print(exponent)
         
