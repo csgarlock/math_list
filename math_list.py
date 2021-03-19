@@ -112,7 +112,6 @@ class math_list:
             high = self.length() - 1
         if(low < high):
             pi = self.__partition(low, high)
-            
             self.sort(low, pi - 1)
             self.sort(pi + 1, high)
             
@@ -184,9 +183,9 @@ class math_list:
     #make sure only ints and floats are being added to the list
     def __check_type(self, values):
         for i in values:
-            if(type(i) == int or type(i) == float):
-                return False
-        return True
+            if(not (type(i) == int or type(i) == float)):
+                return True
+        return False
         
     #used for sorting the list    
     def __partition(self, low, high):
